@@ -8,7 +8,35 @@
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=18zkh5dr10"></script>
 </head>
 <body>
-<div id="map" style="width:100%;height:800px;"></div>
+<!-- <div id="map" style="width:100%;height:800px;"></div> -->
+<div id="map" style="width:100%;height:600px;">
+    <div id="_panel" style="display: inline-block; position: relative; z-index: 1;margin: 20px 0 0 20px;font-size: 12px;">
+        <div id="guide" style="display: inline-block;border: 1px solid #b4b4b4;border-radius: 4px;padding: 10px;background: #fff;">
+            <b>그리기</b><br>
+            아이콘이 선택된 상태에서 지도 위에 클릭합니다.<br>
+            - shift를 누르고 있는 경우 정방형/직교좌표로 스냅이 제공됩니다.<br>
+            - polygon, polyline: 마우스 오른쪽 버튼 클릭/Esc로 그리기 종료.<br>
+            <br>
+            <b>이동</b><br>
+            그려진 도형을 클릭하여 편집 모드로 변경합니다.<br>
+            그려진 도형을 드래그하여 이동합니다.<br>
+            <br>
+            <b>수정</b><br>
+            그려진 도형을 클릭하여 편집 모드로 변경합니다.<br>
+            그려진 도형의 제어점을 드래그하여 수정합니다.<br>
+            - polygon, polyline: 중간 제어점을 클릭하면 점을 추가합니다.<br>
+            <br>
+            <b>삭제</b><br>
+            그려진 도형을 마우스 오른쪽 버튼으로 클릭해 삭제합니다.
+        </div>
+        <br>
+        <div style="display: inline-block;border: 1px solid #b4b4b4;border-radius: 4px;padding: 10px;overflow: scroll;margin-top: 10px;max-height: 300px;background: #fff;">
+            <div><b>Occurred Events</b></div>
+            <div id="logger" ></div>
+        </div>
+    </div>
+
+</div>
 
 <script>
 
