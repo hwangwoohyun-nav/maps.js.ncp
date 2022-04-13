@@ -8,7 +8,6 @@
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=18zkh5dr10"></script>
 </head>
 <body>
-<!-- <div id="map" style="width:100%;height:800px;"></div> -->
 <div id="map" style="width:100%;height:400px;">
 </div>
 
@@ -17,37 +16,46 @@ var GREEN_FACTORY = new naver.maps.LatLng(37.3595953, 127.1053971);
 
 var map = new naver.maps.Map('map', {
     center: GREEN_FACTORY,
-    zoom: 8
+    zoom: 9
 });
 
-var rectangle = new naver.maps.Rectangle({
+new naver.maps.Circle({
     map: map,
-    bounds: new naver.maps.LatLngBounds(
-        new naver.maps.LatLng(37.1793196, 125.8795594),
-        new naver.maps.LatLng(37.5398662, 126.3312422)
-    )
-});
-
-var circle = new naver.maps.Circle({
-    map: map,
-    center: GREEN_FACTORY,
-    radius: 20000,
-    fillColor: 'crimson',
-    fillOpacity: 0.8
-});
-
-var ellipse = new naver.maps.Ellipse({
-    map: map,
-    bounds: new naver.maps.LatLngBounds(
-        new naver.maps.LatLng(37.1793196, 127.6795594),
-        new naver.maps.LatLng(37.5398662, 128.4312422)
-    ),
+    center: new naver.maps.LatLng(37.3595953, 127.1053971),
+    radius: 2000,
     strokeColor: 'yellowgreen',
     strokeOpacity: 1,
     strokeWeight: 3,
     fillColor: 'yellowgreen',
-    fillOpacity: 0.3
+    fillOpacity: 0.8
 });
+
+new naver.maps.Circle({
+    map: map,
+    center: new naver.maps.LatLng(37.4595953, 127.2053971),
+    radius: 4000,
+    strokeColor: 'yellowgreen',
+    strokeOpacity: 1,
+    strokeWeight: 3,
+    fillColor: 'yellowgreen',
+    fillOpacity: 0.8
+});
+
+var greenMarker = new naver.maps.Marker({
+    position: new naver.maps.LatLng(37.3613962, 127.1112487),
+    map: map,
+    title: 'Green',
+    icon: {
+        content: [
+                    '<div>',
+                        TEST 1234
+                    '</div>'
+                ].join(''),
+        size: new naver.maps.Size(38, 58),
+        anchor: new naver.maps.Point(19, 58),
+    },
+});
+
 
 </script>
 </body>
